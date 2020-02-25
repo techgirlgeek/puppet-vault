@@ -17,7 +17,10 @@
 #
 # * `manage_group`
 #   Whether or not the module should create the group.
-#
+# 
+# # `service_type`
+#   Whether vault should run as server or agent. Defaults to 'server'
+# 
 # * `bin_dir`
 #   Directory the vault executable will be installed in.
 #
@@ -50,6 +53,8 @@
 # * `service_options`
 #   Extra argument to pass to `vault server`, as per:
 #   `vault server --help`
+# # `service_type`
+#   Whether vault should run as server or agent. Defaults to 'server'
 
 # * `manage_service`
 #   Instruct puppet to manage service or not
@@ -86,6 +91,7 @@ class vault (
   $service_name                        = $::vault::params::service_name,
   $service_enable                      = $::vault::params::service_enable,
   $service_ensure                      = $::vault::params::service_ensure,
+  $service_type                        = $::vault::params::service_type,
   $service_provider                    = $::vault::params::service_provider,
   $manage_service                      = $::vault::params::manage_service,
   $manage_service_file                 = $::vault::params::manage_service_file,

@@ -52,6 +52,7 @@ class vault::params {
 
   $service_enable = true
   $service_ensure = 'running'
+  $service_type   = 'server'
 
   $service_provider = $facts['service_provider']
 
